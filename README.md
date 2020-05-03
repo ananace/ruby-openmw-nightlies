@@ -2,13 +2,15 @@
 
 A simple sinatra application to generate SVGs and redirects for the OpenMW Windows nightly builds.
 
+Running at https://openmw-nightlies.kubernetes.ctrl-c.liu.se/
+
 ## Usage
 
 Run the application with rackup
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ananace/openmw_nightlies
+Bug reports and pull requests are welcome on GitHub at https://github.com/ananace/ruby-openmw-nightlies
 
 ## License
 
