@@ -58,7 +58,6 @@ module OpenmwNightlies
       headers['If-Modified-Since'] = @last_modified[bits] if @last_modified[bits]
       headers['If-None-Match'] = @etag[bits] if @etag[bits]
       uri = URI(sprintf(INFO_URL, bits: bits))
-      puts uri.inspect
       response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme = 'https') { |http| http.request_get(uri.path, headers) }
 
       return @source_information[bits] if response.is_a? Net::HTTPNotModified
@@ -67,7 +66,6 @@ module OpenmwNightlies
       commit = response.body.strip
 
       uri = URI(sprintf(NIGHTLY_URL, bits: bits, commit: commit))
-      puts uri.inspect
       response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') { |http| http.head(uri.path) }
       response.value
 
